@@ -8,9 +8,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
+    "test-watch": "react-scripts test --watchAll",
     "eject": "react-scripts eject",
     "lint": "eslint --fix",
+    "lint-staged": "lint-staged --verbose",
     "pretty": "prettier --write .",
     "prepare": "husky install"
   },
@@ -22,11 +24,12 @@
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+    "prop-types": "^15.8.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.1",
+    "styled-components": "^5.3.5",
     "web-vitals": "^2.1.4"
   },
   "eslintConfig": {
@@ -48,8 +51,8 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/react": "^13.1.1",
     "eslint": "^8.13.0",
-    "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
