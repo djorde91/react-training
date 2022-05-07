@@ -1,16 +1,17 @@
 import React from 'react';
-import './App.css';
+import { ThemeProvider } from 'styled-components';
+import { darkTheme } from './styles/themes';
+import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header/Header';
 
 function App() {
   return (
-    <div className="App">
-      <Header
-        mainText="Edit
-        <code> src/App.js </code>
-        and save to reload."
-      />
-    </div>
+    <ThemeProvider theme={darkTheme}>
+      <GlobalStyles />
+      <div className="App">
+        <Header id="app-header" />
+      </div>
+    </ThemeProvider>
   );
 }
 
