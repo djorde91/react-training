@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { darkTheme } from './styles/themes';
 import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header/Header';
+import Separator from './components/Separator/Separator';
 
 function App() {
   return (
@@ -10,6 +11,9 @@ function App() {
       <GlobalStyles />
       <div className="App">
         <Header id="app-header" />
+        <Separator id="headerSeparator" />
+        <Separator id="buttonSeparator" styleType="secondary" />
+        <Separator id="counterSeparator" />
       </div>
     </ThemeProvider>
   );
