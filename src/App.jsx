@@ -5,6 +5,7 @@ import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header/Header';
 import Separator from './components/Separator/Separator';
 import Button from './components/Button/Button';
+import TextSizeChanger from './components/TextSizeChanger/TextSizeChanger';
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
         />
         <Separator id="buttonsSeparator" styleType="secondary" />
 
-        <Separator id="counterSeparator" />
+        <TextSizeChanger id="appSizeChanger" />
+        <Separator id="textSizeChangerSeparator" />
       </div>
     </ThemeProvider>
   );

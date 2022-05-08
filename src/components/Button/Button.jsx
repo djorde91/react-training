@@ -2,11 +2,7 @@ import PropTypes from 'prop-types';
 import StyledButton from './StyledButton';
 
 function Button(props) {
-  const { id, type, text, className, styleType } = props;
-
-  const onClick = () => {
-    console.log('button clicked');
-  };
+  const { id, type, text, className, styleType, onClick } = props;
 
   return (
     <StyledButton
@@ -27,6 +23,7 @@ Button.propTypes = {
   text: PropTypes.string,
   className: PropTypes.string,
   styleType: PropTypes.oneOf(['primary', 'secondary']),
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
