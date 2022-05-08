@@ -4,6 +4,7 @@ import { darkTheme } from './styles/themes';
 import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header/Header';
 import Separator from './components/Separator/Separator';
+import Button from './components/Button/Button';
 
 function App() {
   return (
@@ -12,7 +13,16 @@ function App() {
       <div className="App">
         <Header id="app-header" />
         <Separator id="headerSeparator" />
-        <Separator id="buttonSeparator" styleType="secondary" />
+
+        <Button id="basicButton" />
+        <Button
+          id="basicButton2"
+          className="dummy-extra-button-class"
+          styleType="secondary"
+          text="secondary styled button"
+        />
+        <Separator id="buttonsSeparator" styleType="secondary" />
+
         <Separator id="counterSeparator" />
       </div>
     </ThemeProvider>

@@ -2,7 +2,18 @@ const darkTheme = {
   backgroundColor: '#1d1f28',
   color: '#fafafa',
   button: {
-    backgroundColor: '#515d90',
+    primary: {
+      color: '#FFF',
+      backgroundColor: '#1f2a56',
+      backgroundColorHover: '#515d90',
+      borderColor: '#345993',
+    },
+    secondary: {
+      color: '#FFF',
+      backgroundColor: '#270646',
+      backgroundColorHover: '#7a238e',
+      borderColor: '#450852',
+    },
   },
   separator: {
     primary: {
