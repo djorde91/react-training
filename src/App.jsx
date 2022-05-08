@@ -4,8 +4,8 @@ import { darkTheme } from './styles/themes';
 import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header/Header';
 import Separator from './components/Separator/Separator';
-import Button from './components/Button/Button';
 import TextSizeChanger from './components/TextSizeChanger/TextSizeChanger';
+import ClickCounter from './components/ClickCounter/ClickCounter';
 
 function App() {
   return (
@@ -13,19 +13,13 @@ function App() {
       <GlobalStyles />
       <div className="App">
         <Header id="app-header" />
-        <Separator id="headerSeparator" />
-
-        <Button id="basicButton" />
-        <Button
-          id="basicButton2"
-          className="dummy-extra-button-class"
-          styleType="secondary"
-          text="secondary styled button"
-        />
-        <Separator id="buttonsSeparator" styleType="secondary" />
+        <Separator id="appHeaderSeparator" />
 
         <TextSizeChanger id="appSizeChanger" />
-        <Separator id="textSizeChangerSeparator" />
+        <Separator id="appTextSizeChangerSeparator" />
+
+        <ClickCounter id="appClickCounter" />
+        <Separator id="appClickCounterSeparator" styleType="secondary" />
       </div>
     </ThemeProvider>
   );
