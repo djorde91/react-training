@@ -1,47 +1,71 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import Button from '../Button/Button';
 
-function ClickCounter() {
+function ClickCounter(props) {
+  const { id, text, className, counter = { max, min, initial } } = props;
   const [count, setCount] = useState(0);
 
   const handleIncrement = () => {
-    if (count < 10) setCount((prevCount) => prevCount + 1);
+    if (count < counter.max) setCount((prevCount) => prevCount + 1);
   };
 
   const handleDecrement = () => {
-    if (count > 0) setCount((prevCount) => prevCount - 1);
+    if (count > counter.min) setCount((prevCount) => prevCount - 1);
   };
 
   const handleReset = () => {
-    setCount(0);
+    setCount(counter.initial);
   };
 
   return (
-    <div>
+    <div id={id} className={className}>
       <div>
         <Button
           id="incrementCounter"
           text="+ Increment counter"
+          styleType="success"
           onClick={handleIncrement}
         />
         <Button
           id="decrementCounter"
           text="- Decrement counter"
-          styleType="secondary"
+          styleType="error"
           onClick={handleDecrement}
         />
         <h3>
-          Count is: <b>{count} </b>
+          {text} <b>{count} </b>
         </h3>
       </div>
       <Button
         id="decrementCounter"
         text="Reset Counter"
-        styleType="primary"
+        styleType="warning"
         onClick={handleReset}
       />
     </div>
   );
 }
+
+ClickCounter.propTypes = {
+  id: PropTypes.string.isRequired,
+  text: PropTypes.string,
+  className: PropTypes.string,
+  counter: PropTypes.object,
+  counter: PropTypes.shape({
+    max: PropTypes.number,
+    min: PropTypes.number,
+    initial: PropTypes.number,
+  }),
+};
+
+ClickCounter.defaultProps = {
+  text: 'Count is:',
+  counter: {
+    max: 10,
+    min: 0,
+    initial: 0,
+  },
+};
 
 export default ClickCounter;

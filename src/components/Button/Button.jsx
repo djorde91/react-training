@@ -22,7 +22,13 @@ Button.propTypes = {
   type: PropTypes.string,
   text: PropTypes.string,
   className: PropTypes.string,
-  styleType: PropTypes.oneOf(['primary', 'secondary']),
+  styleType: PropTypes.oneOf([
+    'primary',
+    'secondary',
+    'error',
+    'success',
+    'warning',
+  ]),
   onClick: PropTypes.func,
 };
 

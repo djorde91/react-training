@@ -7,7 +7,7 @@ const StyledSeparator = styled.hr`
   padding: 10px;
   background-color: ${(props) =>
     props.theme.separator[props.styleType].backgroundColor};
-  margin: 0 0 15px;
+  margin: 0;
   font-weight: 400;
   font-size: 20px;
   box-sizing: border-box;

@@ -14,6 +14,24 @@ const darkTheme = {
       backgroundColorHover: '#7a238e',
       borderColor: '#450852',
     },
+    success: {
+      color: '#FFF',
+      backgroundColor: '#0b4202',
+      backgroundColorHover: '#025d26',
+      borderColor: '#033c10',
+    },
+    error: {
+      color: '#FFF',
+      backgroundColor: '#850606',
+      backgroundColorHover: '#b20006',
+      borderColor: '#4d0000',
+    },
+    warning: {
+      color: '#FFF',
+      backgroundColor: '#585a00',
+      backgroundColorHover: '#899a02',
+      borderColor: '#373d00',
+    },
   },
   separator: {
     primary: {
