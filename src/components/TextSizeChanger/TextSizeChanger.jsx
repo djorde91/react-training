@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import Button from '../Button/Button';
 
 function TextSizeChanger(props) {
-  const { id, fontSizeDefault, fontSizeMaxLimit, fontSizeMinLimit } = props;
+  const { id, text, fontSizeDefault, fontSizeMaxLimit, fontSizeMinLimit } =
+    props;
   const [fontSize, setFontSize] = useState(fontSizeDefault);
 
   const handleFontSize = (type) => {
@@ -32,10 +33,7 @@ function TextSizeChanger(props) {
         styleType="secondary"
         onClick={() => handleFontSize('decrease')}
       />
-      <p style={{ fontSize: `${fontSize}px` }}>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt,
-        magnam!
-      </p>
+      <p style={{ fontSize: `${fontSize}px` }}>{text}</p>
     </div>
   );
 }
@@ -45,6 +43,7 @@ TextSizeChanger.propTypes = {
   fontSizeDefault: PropTypes.number.isRequired,
   fontSizeMaxLimit: PropTypes.number,
   fontSizeMinLimit: PropTypes.number,
+  text: PropTypes.string.isRequired,
 };
 
 TextSizeChanger.defaultProps = {

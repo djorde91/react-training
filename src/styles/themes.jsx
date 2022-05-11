@@ -43,6 +43,13 @@ const darkTheme = {
       borderColor: '#236223',
     },
   },
+  navigation: {
+    backgroundColor: '#09245a',
+    link: {
+      color: '#eee',
+      colorHover: '#767676',
+    },
+  },
 };
 
 export { darkTheme };
