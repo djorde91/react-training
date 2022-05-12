@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Button from '../Button/Button';
-
 function TextSizeChanger(props) {
   const { id, text, fontSizeDefault, fontSizeMaxLimit, fontSizeMinLimit } =
     props;
   const [fontSize, setFontSize] = useState(fontSizeDefault);
+  const [sizeWarning, setSizeWarning] = useState('');
+
+  useEffect(() => {
+    handleSizeWarning();
+  }, [fontSize]);
 
   const handleFontSize = (type) => {
     switch (type) {
@@ -20,8 +24,34 @@ function TextSizeChanger(props) {
     }
   };
 
+  const handleSizeWarning = () => {
+    let message = false;
+
+    if (fontSize === fontSizeMaxLimit) {
+      message = 'increase';
+    } else if (fontSize === fontSizeMinLimit) {
+      message = 'decrease';
+    }
+
+    if (message) {
+      setSizeWarning(
+        <>
+          <h3>
+            {`Font can't`} <b style={{ color: 'red' }}>{message}</b> {`anymore`}
+          </h3>
+        </>
+      );
+      return;
+    }
+    setSizeWarning('');
+  };
+
   return (
     <div id={id}>
+      {sizeWarning}
+      <h2>
+        Current fontsize is: <b>{fontSize}</b>
+      </h2>
       <Button
         id="increaseSize"
         text="+ increase font size"

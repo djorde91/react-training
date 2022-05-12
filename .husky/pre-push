@@ -7,7 +7,6 @@ npm run test
 ## Prevent push to master
 branch="$(git rev-parse --abbrev-ref HEAD)"
 
-echo $branch
 if [ "$branch" = "master" ] ||[ "$branch" = "main" ]; then
   echo "$(tput setaf 1)You can't commit directly to $(tput setab 1)$(tput setaf 7)$branch$(tput sgr 0)"
   exit 1
