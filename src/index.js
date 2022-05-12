@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+console.warn(
+  `React STRICT MODE is enabled, all components will be called twice on page load\nView https://stackoverflow.com/questions/61254372/my-react-component-is-rendering-twice-because-of-strict-mode for more information`
+);
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

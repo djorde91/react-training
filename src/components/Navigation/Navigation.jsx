@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 function Navigation() {
   return (
     <StyledNav>
+      <StyledLink to="login">Login</StyledLink>
       <StyledLink to="text-size-changer">Text Size Changer</StyledLink>
       <StyledLink to="click-counter">Click Counter</StyledLink>
     </StyledNav>

@@ -6,6 +6,7 @@ import GlobalStyles from './styles/GlobalStyles';
 import Header from './components/Header/Header';
 import TextSizeChangerPage from './pages/TextSizeChangerPage/TextSizeChangerPage';
 import ClickCounterPage from './pages/ClickCounterPage/ClickCounterPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 import NotFoundPage from './pages/NotFoundPage/NotFoundPage';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
                 path="/click-counter"
                 element={<ClickCounterPage />}
               />
+              <Route exact path="/login" element={<LoginPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </div>
