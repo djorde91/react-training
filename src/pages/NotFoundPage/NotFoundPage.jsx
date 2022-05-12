@@ -4,7 +4,7 @@ function NotFoundPage() {
   const location = useLocation();
 
   return (
-    <div>
+    <div id="notFoundPage">
       <code>404</code>
       <p>
         Page not found: <b>{location.pathname}</b>
