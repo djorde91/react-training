@@ -1,8 +1,17 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('App Component', () => {
+  const app = render(<App />);
+  test('has a <header> element', () => {
+    const header = app.container.querySelector('header');
+
+    expect(header).toBeInTheDocument();
+  });
+  test('footer is not present.', () => {
+    const footer = app.container.querySelector('footer');
+
+    expect(footer).toBeNull();
+  });
 });

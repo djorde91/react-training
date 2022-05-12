@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import defaultLogo from '../../logo.svg';
+import Navigation from '../Navigation/Navigation';
+
 import './header.css';
 
 function Header(props) {
@@ -7,16 +9,19 @@ function Header(props) {
 
   return (
     <header id={id} className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
-      <p>{text}</p>
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-      </a>
+      <Navigation />
+      <div className="App-header-content">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>{text}</p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </div>
     </header>
   );
 }
