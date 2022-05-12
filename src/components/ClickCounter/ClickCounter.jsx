@@ -4,7 +4,7 @@ import Button from '../Button/Button';
 
 function ClickCounter(props) {
   const { id, text, className, counter = { max, min, initial } } = props;
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(counter.initial);
 
   const handleIncrement = () => {
     if (count < counter.max) setCount((prevCount) => prevCount + 1);
@@ -34,11 +34,14 @@ function ClickCounter(props) {
           onClick={handleDecrement}
         />
         <h3>
-          {text} <b>{count} </b>
+          {text}{' '}
+          <b id="counterValue" value={count}>
+            {count}{' '}
+          </b>
         </h3>
       </div>
       <Button
-        id="decrementCounter"
+        id="resetCounter"
         text="Reset Counter"
         styleType="warning"
         onClick={handleReset}
